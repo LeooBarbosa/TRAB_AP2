@@ -1,0 +1,86 @@
+public class Bandeja {
+    
+    double valordeFace;
+    int qtdCedula;
+    private double saldo;
+    private double saldobj;
+    private double bandeja100 = 100;
+    private double bandeja50 = 50;
+    private double bandeja20 = 20;
+    private double bandeja10 = 10;
+    private double bandeja5 = 5;
+    int r100, r50, r20, r10, r5;
+    int cedula100, cedula50, cedula20, cedula10, cedula5;
+    
+    Bandeja(int valordeFace, int qtdCedula) {
+        
+        this.valordeFace = valordeFace;
+        this.qtdCedula = qtdCedula;
+    }
+        
+    public void setValordeFace(double valordeFace) {
+        this.valordeFace = valordeFace;
+    }
+    
+    public void setQtdCedula(int qtdCedula) {
+        this.qtdCedula = qtdCedula;
+    }
+    
+    public double getValordeFace() {
+        return this.valordeFace;
+    }
+   
+    public double getQtdCedula() {
+        return this.qtdCedula;
+    }
+    
+    public double getSaldoCx() {
+        saldo = (bandeja100 *20) + (bandeja50 *30) + (bandeja20 *10) + (bandeja10 *5) + (bandeja5 *10);
+        return this.saldo;
+    }
+    public double getSaldoBj() {
+        saldobj = valordeFace * qtdCedula;
+        return this.saldobj;
+    }
+    public void sacar(int sacar){
+        if (sacar <= this.saldo) {
+            
+            cedula100 = sacar / 100;
+            r100 = sacar % 100;
+                        
+            cedula50 = r100 /50;
+            r50 = r100 % 50;
+            
+            cedula20 = r50 /20;
+            r20 = r50 % 20;
+            
+            cedula10 = r20 / 10;
+            r10 = r20 % 10;
+            
+            cedula5 = r10 / 5;
+            r5 = r10 %5;
+                    
+            System.out.println("Saque Realizado,foram Utilizadas: ");
+            
+            if (cedula100 > 0) {
+            System.out.println("Notas de 100: "+cedula100);
+            }
+            
+            if (cedula50 > 0) {
+                System.out.println("Notas de 50: "+cedula50);
+            }
+            if (cedula20 > 0) {
+                System.out.println("Notas de 20: "+cedula20);
+            }
+            if (cedula10 > 0) {
+                System.out.println("Notas de 10: "+cedula10);
+            }
+            if (cedula5 > 0){
+                System.out.println("Notas de 5: "+cedula5);
+            }
+                
+            } else {
+                System.out.println("Nao foi possivel realizar o saque:\nDigite um valor abaixo do total do caixa");
+        }
+    }
+}
