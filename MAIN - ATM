@@ -1,0 +1,39 @@
+public class Atm {
+
+    public static void main(String[] args) {
+        
+        Endereco c1 = new Endereco("ab123", "Rua Heitor", 461, "Campinas", "Sao Paulo" );
+      
+        c1.status();
+       
+        System.out.println("---------- BANCO BRMONEY ----------");
+        System.out.println("Este caixa utiliza somente notas de:\n 100 Reais / 50 Reais / 20 Reais / 10 Reais ");
+        System.out.println("-----------------------------------");
+        Bandeja b100 = new Bandeja(100,20);
+        Bandeja b50 = new Bandeja(50,30);
+        Bandeja b20 = new Bandeja(20,10);
+        Bandeja b10 = new Bandeja(10,5);
+        Bandeja b5 = new Bandeja(5,10);
+        
+        System.out.println("Saldo da bandeja 1:   " +b100.getSaldoBj());
+        System.out.println("Saldo da bandeja 2:   " +b50.getSaldoBj());
+        System.out.println("Saldo da bandeja 3:   " +b20.getSaldoBj());
+        System.out.println("Saldo da bandeja 4:   " +b10.getSaldoBj());
+        System.out.println("-----------------------------------");
+        System.out.println("Bandeja 1 - Possui "+b100.getQtdCedula() +" Notas de R$" +b100.getValordeFace());
+        System.out.println("Bandeja 2 - Possui "+b50.getQtdCedula() +" Notas de R$" +b50.getValordeFace());
+        System.out.println("Bandeja 3 - Possui "+b20.getQtdCedula() +" Notas de R$" +b20.getValordeFace());
+        System.out.println("Bandeja 4 - Possui "+b10.getQtdCedula() +" Notas de R$" +b10.getValordeFace());
+        System.out.println("Bandeja 5 - Possui "+b5.getQtdCedula() +" Notas de R$" +b5.getValordeFace());
+        
+        System.out.println(" \nSaldo total do Caixa:  " +b10.getSaldoCx());
+        
+        b10.sacar(1775);
+        
+        
+        
+        
+        
+    }
+    
+}
